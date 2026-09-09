@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Prompt Generator Generator Artikel Profesional</title>
+    <title>AI Prompt Generator Artikel Profesional</title>
     <style>
         :root {
             --primary: #2563eb;
@@ -41,7 +41,7 @@
         label {
             display: block;
             font-weight: 600;
-            margin-bottom: 0.5srem;
+            margin-bottom: 0.5rem;
             font-size: 0.875rem;
         }
         select, input[type="text"], textarea {
@@ -104,33 +104,33 @@
     <div class="form-group">
         <label for="gayaPenulis">Gaya Penulis</label>
         <select id="gayaPenulis">
-    <option value="pop">Pop</option>
-    <option value="serius">Serius</option>
-    <option value="fiksi">Fiksi</option>
-    <option value="ilmiah">Ilmiah</option>
-    <option value="inspiratif">Inspiratif</option>
-    <option value="persuasif">Persuasif / Copywriting</option>
-    <option value="narrative">Storytelling</option>
-    <option value="deskriptif">Deskriptif / Review</option>
-    <option value="kasual">Kasual / Santai</option>
-    <option value="satiris">Satiris / Kritis</option>
-    <option value="akademis">Akademis</option>
-</select>
+            <option value="pop">Pop</option>
+            <option value="serius">Serius</option>
+            <option value="fiksi">Fiksi</option>
+            <option value="ilmiah">Ilmiah</option>
+            <option value="inspiratif">Inspiratif</option>
+            <option value="persuasif">Persuasif / Copywriting</option>
+            <option value="narrative">Storytelling</option>
+            <option value="deskriptif">Deskriptif / Review</option>
+            <option value="kasual">Kasual / Santai</option>
+            <option value="satiris">Satiris / Kritis</option>
+            <option value="akademis">Akademis</option>
+        </select>
     </div>
 
     <div class="form-group">
         <label for="bidang">Bidang</label>
         <select id="bidang">
-    <option value="edukasi">Edukasi</option>
-    <option value="motivasi">Motivasi</option>
-    <option value="teknologi">Teknologi & Digital</option>
-    <option value="bisnis">Bisnis & Keuangan</option>
-    <option value="kesehatan">Kesehatan & Wellness</option>
-    <option value="produktivitas">Pengembangan Diri & Produktivitas</option>
-    <option value="gaya_hidup">Gaya Hidup & Parenting</option>
-    <option value="sains">Sains & Lingkungan</option>
-    <option value="seni">Seni & Budaya</option>
-</select>
+            <option value="edukasi">Edukasi</option>
+            <option value="motivasi">Motivasi</option>
+            <option value="teknologi">Teknologi & Digital</option>
+            <option value="bisnis">Bisnis & Keuangan</option>
+            <option value="kesehatan">Kesehatan & Wellness</option>
+            <option value="produktivitas">Pengembangan Diri & Produktivitas</option>
+            <option value="gaya_hidup">Gaya Hidup & Parenting</option>
+            <option value="sains">Sains & Lingkungan</option>
+            <option value="seni">Seni & Budaya</option>
+        </select>
     </div>
 
     <div class="form-group">
@@ -189,6 +189,12 @@ function generatePrompt() {
    - Jangan gunakan sintaks LaTeX atau pemformatan footnote khusus (seperti [^1]) agar teks mudah di-copy paste ke HTML atau Markdown biasa.
    - Pastikan tanda kurung siku [ref: ...] menyatu langsung dengan teks artikel tanpa memutus alur baca.
    - Saya akan copy hasilnya dalam format markdown.
+
+4. Tambahan Output SEO & Ringkasan (Wajib Disertakan di Bagian Akhir Artikel):
+   - **Ringkasan Artikel (Excerpt):** (Tuliskan ringkasan singkat padat 2-3 kalimat mengenai inti artikel)
+   - **Meta Title SEO:** (Judul optimal untuk mesin pencari maksimal 60 karakter)
+   - **Meta Description SEO:** (Deskripsi meta penelusuran optimal 150-160 karakter yang memuat keyword utama)
+   - **Keywords SEO:** (Daftar kata kunci terkait topik yang dipisahkan dengan koma)
 
 Sekarang, buatlah artikel lengkap mengenai ${topik}.`;
 
