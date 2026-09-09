@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Generator Generator Artikel Profesional</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --border-color: #cbd5e1;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--primary);
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5srem;
+            font-size: 0.875rem;
+        }
+        select, input[type="text"], textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            height: 120px;
+        }
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+        .output-section {
+            margin-top: 2rem;
+            border-top: 2px solid var(--bg-color);
+            padding-top: 1.5rem;
+        }
+        .output-box {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-size: 0.875rem;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+        }
+        .copy-btn {
+            background-color: #059669;
+        }
+        .copy-btn:hover {
+            background-color: #047857;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Generator Prompt Artikel AI</h1>
+    
+    <div class="form-group">
+        <label for="gayaPenulis">Gaya Penulis</label>
+        <select id="gayaPenulis">
+            <option value="pop">Pop</option>
+            <option value="serius">Serius</option>
+            <option value="fiksi">Fiksi</option>
+            <option value="ilmiah">Ilmiah</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="bidang">Bidang</label>
+        <select id="bidang">
+            <option value="edukasi">Edukasi</option>
+            <option value="motivasi">Motivasi</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="targetPembaca">Target Pembaca (Gender)</label>
+        <select id="targetPembaca">
+            <option value="wanita dan pria">Wanita dan Pria</option>
+            <option value="wanita">Wanita</option>
+            <option value="pria">Pria</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="rentangUsia">Rentang Usia</label>
+        <input type="text" id="rentangUsia" value="40-55">
+    </div>
+
+    <div class="form-group">
+        <label for="topik">Topik Artikel</label>
+        <input type="text" id="topik" placeholder="Contoh: Manajemen Keuangan Keluarga di Era Digital">
+    </div>
+
+    <button onclick="generatePrompt()">Buat Prompt</button>
+
+    <div class="output-section">
+        <label>Hasil Prompt (Siap Copy)</label>
+        <div id="outputResult" class="output-box">Silakan isi form di atas dan klik tombol "Buat Prompt".</div>
+        <button class="copy-btn" onclick="copyResult()">Copy ke Clipboard</button>
+    </div>
+</div>
+
+<script>
+function generatePrompt() {
+    const gaya = document.getElementById('gayaPenulis').value;
+    const bidang = document.getElementById('bidang').value;
+    const target = document.getElementById('targetPembaca').value;
+    const usia = document.getElementById('rentangUsia').value;
+    const topik = document.getElementById('topik').value || '[MASUKKAN TOPIK DI SINI]';
+
+    const promptText = `Bertindaklah sebagai penulis artikel ${gaya} di bidang ${bidang} profesional. Buatlah artikel mengenai ${topik} dengan mengikuti aturan struktur dan format sitasi khusus di bawah ini:
+
+1. Gaya Bahasa & Struktur Artikel:
+   - Gunakan bahasa Indonesia yang edukatif, informatif, dan lugas. Target pembaca adalah ${target}, usia ${usia} tahun
+   - Gunakan judul, subjudul/tahapan utama, serta poin penjelas yang sistematis. Judul tidak boleh lebih dari 100 karakter dengan alasan SEO.
+   - Jumlah H2, H3, H4 , bullets , quotes dan paragrafnya tidak dibatasi, namun idealnya saya ingin ada 1500 hingga 2000 kata.
+
+2. Aturan Penulisan Indikator Footnote / Sitasi ilmiah Inline:
+   - Letakkan indikator sitasi persis di akhir kalimat atau paragraf yang mengambil referensi data, teori, atau klaim penting.
+   - Format indikator sitasi harus ditulis persis di dalam kurung siku seperti ini:
+     [ref: Nama Penulis, "Judul Artikel/Buku", Nama Jurnal/Media, Tahun, URL]
+   - Contoh penempatan:
+     ...daya tahan tubuh. [ref: Dr. Stein M.Sc, "Pola Sehat", Jurnal Ilmu, 2025, https://google.com/]
+   - Satu artikel edukasi boleh memiliki sitasi maksimal 20% dari jumlah paragraphnya.
+
+3. Ketentuan Kompatibilitas Text Editor:
+   - Jangan gunakan sintaks LaTeX atau pemformatan footnote khusus (seperti [^1]) agar teks mudah di-copy paste ke HTML atau Markdown biasa.
+   - Pastikan tanda kurung siku [ref: ...] menyatu langsung dengan teks artikel tanpa memutus alur baca.
+   - Saya akan copy hasilnya dalam format markdown.
+
+Sekarang, buatlah artikel lengkap mengenai ${topik}.`;
+
+    document.getElementById('outputResult').innerText = promptText;
+}
+
+function copyResult() {
+    const text = document.getElementById('outputResult').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        alert('Prompt berhasil disalin ke clipboard!');
+    }).catch(err => {
+        alert('Gagal menyalin teks.');
+    });
+}
+
+// Generate default on load
+generatePrompt();
+</script>
+
+</body>
+</html>
