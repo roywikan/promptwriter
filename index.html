@@ -169,20 +169,21 @@ function generatePrompt() {
     const usia = document.getElementById('rentangUsia').value;
     const topik = document.getElementById('topik').value || '[MASUKKAN TOPIK DI SINI]';
 
-    const promptText = `Bertindaklah sebagai penulis artikel ${gaya} di bidang ${bidang} profesional. Buatlah artikel mengenai ${topik} dengan mengikuti aturan struktur dan format sitasi khusus di bawah ini:
+    const promptText = `Bertindaklah sebagai manusia dengan segala kekurangannya, penulis artikel ${gaya} di bidang ${bidang} profesional. Buatlah artikel mengenai ${topik} dengan mengikuti aturan struktur dan format sitasi khusus di bawah ini:
 
 1. Gaya Bahasa & Struktur Artikel:
-   - Gunakan bahasa Indonesia yang edukatif, informatif, dan lugas. Target pembaca adalah ${target}, usia ${usia} tahun
+   - Gunakan bahasa Indonesia yang humanis, edukatif, informatif, dan lugas. Target pembaca adalah ${target}, usia ${usia} tahun
    - Gunakan judul, subjudul/tahapan utama, serta poin penjelas yang sistematis. Judul tidak boleh lebih dari 100 karakter dengan alasan SEO.
    - Jumlah H2, H3, H4 , bullets , quotes dan paragrafnya tidak dibatasi, namun idealnya saya ingin ada 1500 hingga 2000 kata.
+   - Hasil karyamu harus lolos tes uji tidak terbukti sebagai buatan AI.
 
 2. Aturan Penulisan Indikator Footnote / Sitasi ilmiah Inline:
    - Letakkan indikator sitasi persis di akhir kalimat atau paragraf yang mengambil referensi data, teori, atau klaim penting.
    - Format indikator sitasi harus ditulis persis di dalam kurung siku seperti ini:
      [ref: Nama Penulis, "Judul Artikel/Buku", Nama Jurnal/Media, Tahun, URL]
    - Contoh penempatan:
-     ...daya tahan tubuh. [ref: Dr. Stein M.Sc, "Pola Sehat", Jurnal Ilmu, 2025, https://google.com/]
-   - Satu artikel edukasi boleh memiliki sitasi maksimal 20% dari jumlah paragraphnya.
+     ...daya tahan tubuh. [ref: Nur, M., & Kusumawardhani, N., "The Effect of Corporate Social Responsibility on Company Financial Performance with Corporate Governance as a Mediating Variable", Journal of Accounting and Investment 20(1), 74-85., 2019, https://www.researchgate.net/publication/413437863_The_Impact_of_Corporate_Social_Responsibility_on_Financial_Performance_of_The_Company_by_Considering_the_Corporate_Governance_as_Moderating_Variable_and_Competitive_Advantage_as_Mediating_Variable]
+   - Satu artikel edukasi boleh memiliki sitasi maksimal 30% dari jumlah paragraphnya.
 
 3. Ketentuan Kompatibilitas Text Editor:
    - Jangan gunakan sintaks LaTeX atau pemformatan footnote khusus (seperti [^1]) agar teks mudah di-copy paste ke HTML atau Markdown biasa.
